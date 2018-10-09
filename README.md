@@ -1,5 +1,5 @@
 # RAK831-LoRaGateway-RPi
-ttn_gateway based on the latest semtech [packet_forwarder](https://github.com/Lora-net/packet_forwarder)
+ttn_gateway based on the latest SX1301 driver [lora_gateway](https://github.com/Lora-net/lora_gateway) v5.0.1 and semtech [packet_forwarder](https://github.com/Lora-net/packet_forwarder) v4.0.1  
 
 
 ##	Installation procedure

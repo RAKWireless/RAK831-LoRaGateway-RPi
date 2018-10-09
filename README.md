@@ -21,9 +21,6 @@ step3 : Next you will see some messages as follow. Just hit the Enter key to kee
       Longitude [0]: 
       Altitude [0]: 
 
-step4 : Runing the gateway after the rpi restarted automatically. 
+step4 : Now you have a running gateway after restart!
     
-      $ cd ~/rak831-loragateway/packet_forwarder/lora_pkt_fwd/
-      $ sudo ./start.sh
       
-Now your gateway should working!

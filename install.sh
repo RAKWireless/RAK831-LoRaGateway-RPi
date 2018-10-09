@@ -70,6 +70,11 @@ fi
 echo "Installing dependencies..."
 apt-get install git
 
+# Install LoRaWAN packet forwarder repositories
+INSTALL_DIR="/opt/ttn-gateway"
+if [ ! -d "$INSTALL_DIR" ]; then mkdir $INSTALL_DIR; fi
+pushd $INSTALL_DIR
+
 # Build LoRa gateway app
 
 git clone https://github.com/Lora-net/lora_gateway.git
@@ -94,7 +99,7 @@ make
 popd
 
 
-LOCAL_CONFIG_FILE=$SCRIPT_DIR/packet_forwarder/lora_pkt_fwd/local_conf.json
+LOCAL_CONFIG_FILE=$INSTALL_DIR/packet_forwarder/lora_pkt_fwd/local_conf.json
 
 #config local_conf.json
 
@@ -108,8 +113,8 @@ echo "Installation completed."
 
 # Start packet forwarder as a service
 #cp ./start.sh $INSTALL_DIR/bin/
-#cp ./ttn-gateway.service /lib/systemd/system/
-#systemctl enable ttn-gateway.service
+cp $SCRIPT_DIR/ttn-gateway.service /lib/systemd/system/
+systemctl enable ttn-gateway.service
 
 echo "The system will reboot in 5 seconds..."
 sleep 5

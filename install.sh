@@ -116,6 +116,23 @@ echo "Installation completed."
 cp $SCRIPT_DIR/ttn-gateway.service /lib/systemd/system/
 systemctl enable ttn-gateway.service
 
+# add config "dtoverlay=pi3-disable-bt" to config.txt
+linenum=`sed -n '/dtoverlay=pi3-disable-bt/=' /boot/config.txt`
+if [ ! -n "$linenum" ]; then
+	echo "dtoverlay=pi3-disable-bt" >> /boot/config.txt
+fi
+
+
+# add cmd "systemctl stop serial-getty@ttyAMA0.service" to rc.local
+linenum=`sed -n '/serial-getty@ttyAMA0.service/=' /etc/rc.local`
+if [ ! -n "$linenum" ]; then
+	set -a line_array
+	line_index=0
+	for linenum in `sed -n '/exit 0/=' /etc/rc.local`; do line_array[line_index]=$linenum; let line_index=line_index+1; done
+	sed -i "${line_array[${#line_array[*]} - 1]}isystemctl stop serial-getty@ttyAMA0.service" /etc/rc.local
+fi
+systemctl disable hciuart
+
 echo "The system will reboot in 5 seconds..."
 sleep 5
 shutdown -r now

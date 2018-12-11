@@ -21,6 +21,14 @@ step3 : Next you will see some messages as follow. Just hit the Enter key to kee
       Longitude [0]: 
       Altitude [0]: 
 
-step4 : Now you have a running gateway after restart!
+step4 (Optional):If GPS is connected to gateway, after system restart, you must modify /opt/ttn-gateway/packet_forwarder/lora_pkt_fwd/global_conf.json and add the following content if the "gateway_conf" item does not contain them. You must reboot gateway after modify the global_conf.json.
+      "gateway_conf": {
+          "gps": true,
+          "gps_tty_path": "/dev/ttyAMA0",
+          "fake_gps": false,
+          "ref_latitude": 10,
+          "ref_longitude": 20,
+          "ref_altitude": -1
+      }
     
-      
+step5 : Now you have a running gateway after restart!

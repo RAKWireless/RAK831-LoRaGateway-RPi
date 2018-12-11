@@ -22,6 +22,7 @@ step3 : Next you will see some messages as follow. Just hit the Enter key to kee
       Altitude [0]: 
 
 step4 (Optional):If GPS is connected to gateway, after system restart, you must modify /opt/ttn-gateway/packet_forwarder/lora_pkt_fwd/global_conf.json and add the following content if the "gateway_conf" item does not contain them. You must reboot gateway after modify the global_conf.json.
+      
       "gateway_conf": {
           "gps": true,
           "gps_tty_path": "/dev/ttyAMA0",

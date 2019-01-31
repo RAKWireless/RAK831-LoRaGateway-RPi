@@ -81,7 +81,7 @@ git clone https://github.com/Lora-net/lora_gateway.git
 
 pushd lora_gateway
 
-cp $SCRIPT_DIR/library.cfg ./libloragw/library.cfg
+# cp $SCRIPT_DIR/library.cfg ./libloragw/library.cfg
 
 make
 

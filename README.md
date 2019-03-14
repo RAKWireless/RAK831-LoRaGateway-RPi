@@ -1,3 +1,9 @@
+2019.3.14
+We've released a new firmware for RAK831 and RAK2245 which is the next generation hardware of RAK831, based on Raspbian OS.
+Please check this link: https://github.com/RAKWireless/RAK2245-RAK831-LoRaGateway-RPi-Raspbian-OS
+
+From now on, this repository will be closed.
+
 # RAK831-LoRaGateway-RPi
 ttn_gateway based on the latest SX1301 driver [lora_gateway](https://github.com/Lora-net/lora_gateway) v5.0.1 and semtech [packet_forwarder](https://github.com/Lora-net/packet_forwarder) v4.0.1  
 

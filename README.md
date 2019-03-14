@@ -1,5 +1,6 @@
 2019.3.14
-We've released a new firmware for RAK831 and RAK2245 which is the next generation hardware of RAK831, based on Raspbian OS.
+
+Note: We've released a new firmware for RAK831 and RAK2245 which is the next generation hardware of RAK831, based on Raspbian OS.
 Please check this link: https://github.com/RAKWireless/RAK2245-RAK831-LoRaGateway-RPi-Raspbian-OS
 
 From now on, this repository will be closed.
